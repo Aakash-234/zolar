@@ -1,0 +1,263 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family-base);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-8);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.mainContent {
+  flex-grow: 1;
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-12);
+  align-items: center;
+  padding: var(--spacing-16) var(--spacing-8);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroBadge {
+  margin-bottom: var(--spacing-4);
+}
+
+.heroTitle {
+  font-family: var(--font-family-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-6);
+  max-width: 20ch;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-8);
+  max-width: 55ch;
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+.heroImageContainer {
+  position: relative;
+  height: 500px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg,
+      hsla(175, 55%, 40%, 0.1),
+      hsla(30, 90%, 55%, 0.1));
+}
+
+/* Features Section */
+.featuresSection {
+  padding: var(--spacing-16) var(--spacing-8);
+  background-color: var(--surface);
+}
+
+.featuresContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-4);
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 60ch;
+  margin: 0 auto var(--spacing-12) auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+  text-align: left;
+}
+
+.featureCard {
+  background-color: var(--background);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.featureIcon {
+  display: inline-flex;
+  padding: var(--spacing-3);
+  border-radius: var(--radius);
+  background-color: color-mix(in srgb, var(--primary) 15%, transparent);
+  color: var(--primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+}
+
+.featureDescription {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: var(--spacing-16) var(--spacing-8);
+  background-color: var(--background);
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--spacing-12);
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.ctaTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-8);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--spacing-8);
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroContent {
+    align-items: center;
+  }
+
+  .heroTitle {
+    font-size: 2.75rem;
+  }
+
+  .heroImageContainer {
+    order: -1;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-4);
+  }
+
+  .hero {
+    padding: var(--spacing-12) var(--spacing-4);
+  }
+
+  .featuresSection,
+  .ctaSection {
+    padding: var(--spacing-12) var(--spacing-4);
+  }
+
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

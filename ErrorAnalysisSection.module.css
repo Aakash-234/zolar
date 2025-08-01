@@ -1,0 +1,158 @@
+.container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.header {
+  padding: var(--spacing-4);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.summaryStats {
+  margin: var(--spacing-4);
+  margin-top: 0;
+}
+
+.loadingState,
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-8);
+  color: var(--muted-foreground);
+}
+
+.errorState {
+  color: var(--error);
+}
+
+.errorsList {
+  padding: var(--spacing-4);
+  padding-top: 0;
+}
+
+.errorsTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-4);
+  color: var(--foreground);
+}
+
+.errorsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.errorItem {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-4);
+  transition: all var(--animation-duration-fast) ease;
+}
+
+.errorItem:hover {
+  background-color: color-mix(in srgb, var(--muted) 80%, var(--surface));
+}
+
+.errorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-3);
+  gap: var(--spacing-2);
+}
+
+.fieldName {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: var(--spacing-2);
+}
+
+.fieldName span {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.errorMessage {
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-3);
+  line-height: 1.5;
+}
+
+.errorMessage strong {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.suggestedFix {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: var(--spacing-3);
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--primary);
+}
+
+.suggestedFix strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.noErrorsState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-8);
+  text-align: center;
+}
+
+.noErrorsState svg {
+  color: var(--success);
+}
+
+.noErrorsState h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.noErrorsState p {
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

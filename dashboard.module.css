@@ -1,0 +1,356 @@
+.container {
+  padding: var(--spacing-8);
+}
+
+.header {
+  margin-bottom: var(--spacing-8);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-2);
+}
+
+.subtitle {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+}
+
+.section {
+  margin-bottom: var(--spacing-12);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-3);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Analytics */
+.analyticsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.analyticsCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.analyticsIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+  color: var(--primary);
+}
+
+.analyticsContent {
+  overflow: hidden;
+}
+
+.analyticsValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.analyticsTitle {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Document List */
+.listContainer {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .filters {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.searchWrapper {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: calc(var(--spacing-3) * 2 + 18px);
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--animation-duration-fast) ease;
+  cursor: pointer;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: var(--muted);
+}
+
+.cellPrimary {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.cellSecondary {
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-3) var(--spacing-4);
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.emptyState,
+.errorState {
+  text-align: center;
+  padding: var(--spacing-12) var(--spacing-4);
+  color: var(--muted-foreground);
+}
+
+.emptyState svg {
+  margin-bottom: var(--spacing-4);
+  color: var(--border);
+}
+
+.emptyState p {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-1);
+}
+
+.errorState {
+  color: var(--error);
+  background-color: color-mix(in srgb, var(--error) 10%, transparent);
+}
+
+/* Document Details Sheet */
+.sheetContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.sheetPadding {
+  padding: var(--spacing-6);
+}
+
+.sheetHeader {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sheetBadge {
+  margin-top: var(--spacing-3);
+  align-self: flex-start;
+}
+
+.sheetBody {
+  padding: var(--spacing-6);
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.errorAnalysis {
+  margin-bottom: var(--spacing-6);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .detailsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.detailsGrid > div > span {
+  color: var(--muted-foreground);
+  display: block;
+  margin-bottom: var(--spacing-1);
+}
+
+.detailsGrid > div > p {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.sectionHeading {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-4);
+}
+
+.fieldsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.fieldItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-4);
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.fieldInfo {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.fieldHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-1);
+}
+
+.fieldName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.confidenceScore {
+  font-size: 0.8125rem;
+  color: var(--primary);
+  font-weight: 500;
+  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+}
+
+.fieldValue {
+  font-weight: 500;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-1);
+  word-wrap: break-word;
+}
+
+.validationNotes {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+  margin: 0;
+}
+
+.fieldActions {
+  flex-shrink: 0;
+  margin-left: var(--spacing-3);
+}
+
+.noDataText {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  padding: var(--spacing-4) 0;
+}
+
+.sheetFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-top: 1px solid var(--border);
+  background-color: var(--surface);
+  flex-shrink: 0;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
